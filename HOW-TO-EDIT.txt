@@ -1,0 +1,37 @@
+BIRTHDAY WEBSITE - HOW TO MAKE IT YOURS
+=======================================
+
+1. YOUR VIDEOS
+   Put your videos in the "videos" folder and name them
+   video1.mp4, video2.mp4, video3.mp4, video4.mp4, video5.mp4
+   (replace the sample files). Any size or shape works: phone videos,
+   wide videos and square ones are all fitted automatically.
+
+   Use .mp4 files. iPhone videos saved as .mov (HEVC) may not play in
+   Chrome or on Android, so export or convert them to .mp4 (H.264) first.
+
+2. YOUR PHOTOS
+   Put your photos in the "photos" folder:
+   hero.jpg     the photo on the first screen
+   photo1.jpg ... photo6.jpg   the photo section
+   Any size or shape works here too.
+
+3. NAME, DATE, CAPTIONS AND THE BIG WISH
+   Open index.html in any text editor (Notepad, TextEdit, VS Code)
+   and search for "EDIT HERE". Change:
+   name, birthday (YYYY-MM-DD), captions, and the finale message.
+
+   Want more or fewer videos/photos? Add or remove lines in the
+   "videos" and "photos" lists. Different file names are fine as long
+   as the list matches.
+
+   Don't want the cake section? Set   showCake: false
+
+4. VIEW IT
+   Double-click index.html to open it in your browser.
+
+5. SHARE IT
+   Upload the whole folder (index.html + videos + photos) to any free
+   static host, for example Netlify Drop, GitHub Pages or Vercel, and
+   send the link. Keep large videos under about 50 MB each so the page
+   stays fast on phones.
