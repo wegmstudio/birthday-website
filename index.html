@@ -507,6 +507,7 @@ const PARTY = {
   showCake: true,
   candles: 3,
   bgm: 'media_bgm.mp3',
+  cakeSong: 'cake_music.mp3',
 
   poem: [
     'Happy birthday, Afnan Fathima!',
@@ -755,6 +756,13 @@ if (PARTY.bgm){
     return bgmOn;
   }
   window.__bgm = { toggle: toggleBgm, pause: ()=>{ bgm.pause(); bgmOn=false; }, resume: ()=>{ if(!bgmOn){ bgm.play().catch(()=>{}); bgmOn=true; } } };
+}
+
+/* ---------- cake song (plays when the slice lands) ---------- */
+if (PARTY.showCake && PARTY.cakeSong){
+  const cakeSong = new Audio(PARTY.cakeSong);
+  cakeSong.volume = .8;
+  window.__cakeSong = { play(){ cakeSong.currentTime = 0; cakeSong.play().catch(()=>{}); }, stop(){ cakeSong.pause(); } };
 }
 
 /* ---------- share ---------- */
@@ -1156,6 +1164,7 @@ if (PARTY.showCake){
     setTimeout(() => {
       setCake('done');
       const r = cakeStage.getBoundingClientRect(); audio.pop(); confetti.burst(r.left + r.width / 2, r.top + r.height * .55, 160);
+      if (window.__cakeSong){ if (window.__bgm) window.__bgm.pause(); window.__cakeSong.play(); }
     }, reduceMotion ? 250 : 2050);
   };
   setCake('idle');
